@@ -5,4 +5,4 @@ go:
   - 1.10
 
 install:
- - go get -u github.com/stretchr/testify/require
+ - go get -u github.com/stretchr/testify/require github.com/hashicorp/hcl github.com/vulcand/predicate
