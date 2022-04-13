@@ -67,6 +67,13 @@ func (hc *HC) editAndSave(filename string, section string, key string, value int
 				Text: strconv.Quote(v),
 			},
 		}
+	case int:
+		setNode = &ast.LiteralType{
+			Token: token.Token{
+				Type: token.NUMBER,
+				Text: fmt.Sprintf("%d", v),
+			},
+		}
 	case int32:
 		setNode = &ast.LiteralType{
 			Token: token.Token{

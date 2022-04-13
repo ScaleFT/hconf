@@ -509,7 +509,7 @@ func (hc *HC) decodeInt(name string, node ast.Node, result reflect.Value) error 
 				return err
 			}
 
-			result.Set(reflect.ValueOf(int(v)))
+			result.Set(reflect.ValueOf(int64(v)))
 			return nil
 		case token.STRING:
 			v, err := strconv.ParseInt(n.Token.Value().(string), 0, 0)
@@ -517,7 +517,7 @@ func (hc *HC) decodeInt(name string, node ast.Node, result reflect.Value) error 
 				return err
 			}
 
-			result.Set(reflect.ValueOf(int(v)))
+			result.Set(reflect.ValueOf(int64(v)))
 			return nil
 		}
 	}
